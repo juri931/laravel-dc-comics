@@ -19,7 +19,7 @@
         <tr>
             <td>{{ $comic->id }}</td>
             <td>{{ $comic->title }}</td>
-            <td><img style="max-width: 100px" src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></td>
+            <td><img style="max-width: 150px" src="{{ $comic->thumb }}" alt="{{ $comic->title }}"></td>
             <td>{{ $comic->price }}</td>
 
             <td>

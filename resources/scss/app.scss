@@ -1,1 +1,57 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+header {
+    background: linear-gradient(
+        to bottom,
+        #f8b195,
+        #f67280,
+        #c06c84,
+        #6c5b7b,
+        #355c7d
+    );
+    padding: 20px;
+    color: #fff;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        li {
+            margin-right: 20px;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+footer {
+    background: #355c7d;
+    padding: 20px;
+    color: #fff;
+    ul {
+        list-style: none;
+        margin: 0;
+        margin-bottom: 20px;
+
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        li {
+            margin-right: 20px;
+            font-size: 3.5rem;
+        }
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+        .dc-about {
+            margin: 20px;
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 <header>
-    <h1>Header</h1>
+    <h1>DC Comics</h1>
 
     <ul class="nav">
         <li class="nav-item">
