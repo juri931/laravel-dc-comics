@@ -2,6 +2,7 @@
 
 @section('content')
 
-<h1>Home</h1>
+<h1>Home DC Comics</h1>
+<p>Nel database ci sono {{ $num_products }} prodotti</p>
 
 @endsection
