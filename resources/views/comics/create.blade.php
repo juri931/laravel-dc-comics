@@ -32,7 +32,8 @@
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo</label>
                 <input name="type" type="text" class="form-control" id='type'>
-            </div><div class="mb-3">
+            </div>
+            <div class="mb-3">
                 <label for="artists" class="form-label">Disegnatori ["nome", "nome"]</label>
                 <input name="artists" type="text" class="form-control" id='artists'>
             </div><div class="mb-3">

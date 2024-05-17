@@ -14,8 +14,4 @@ class PageController extends Controller
 
         return view('home', compact('num_products'));
     }
-
-    public function nuovaPagina(){
-        return view('nuova-pagina');
-    }
 }

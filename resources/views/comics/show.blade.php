@@ -16,8 +16,8 @@
                 <p><b>Series:</b> {{ $comic->series }}</p>
                 <p><b>Sale Date:</b> {{ $comic->sale_date }}</p>
                 <p><b>Type:</b> {{ $comic->type }}</p>
-                <p><b>Artists:</b> {{ implode(', ', json_decode($comic->artists)) }}</p>
-                <p><b>Writers:</b> {{ implode(', ', json_decode($comic->writers)) }}</p>
+                <p><b>Artists:</b> {{ $comic->artists }}</p>
+                <p><b>Writers:</b> {{ $comic->writers }}</p>
             </div>
         </div>
     </div>

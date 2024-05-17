@@ -30,31 +30,13 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-        'title' => 'required|string|max:255',
-        'description' => 'required|string',
-        'thumb' => 'required|string|max:255',
-        'price' => 'required|numeric',
-        'series' => 'required|string|max:255',
-        'sale_date' => 'required|date',
-        'type' => 'required|string|max:255',
-        'artists' => 'required|array',
-        'writers' => 'required|array',
-    ]);
+        $form_data = $request->all();
+        $form_data['artists'] = '';
+        $form_data['writers'] = '';
+
 
         $new_comic = new Comic();
-    $new_comic->title = $validatedData['title'];
-    $new_comic->description = $validatedData['description'];
-    $new_comic->thumb = $validatedData['thumb'];
-    $new_comic->price = $validatedData['price'];
-    $new_comic->series = $validatedData['series'];
-    $new_comic->sale_date = $validatedData['sale_date'];
-    $new_comic->type = $validatedData['type'];
-    $new_comic->artists = json_encode(array_map('trim', $validatedData['artists']));
-    $new_comic->writers = json_encode(array_map('trim', $validatedData['writers']));
-
-    $new_comic->save();
-
+        $new_comic->fill($form_data);
         $new_comic->save();
 
         return redirect()->route('comics.show', $new_comic);
