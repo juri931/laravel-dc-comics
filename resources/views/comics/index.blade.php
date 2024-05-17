@@ -3,8 +3,7 @@
 @section('content')
 
 <div class="container">
-<h1>Lista DC Comics</h1>
-<table class="table">
+    <table class="table">
     <thead>
         <tr>
             <th scope="col">ID</th>
