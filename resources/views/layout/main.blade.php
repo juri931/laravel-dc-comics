@@ -10,7 +10,7 @@
     <!-- Styles -->
     @vite('resources/js/app.js')
 
-    <title>Comics</title>
+    <title>DC Comics | @yield('title')</title>
 </head>
 <body>
     @include('partials.header')

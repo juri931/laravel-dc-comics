@@ -36,3 +36,7 @@
 </table>
 </div>
 @endsection
+
+@section('title')
+List
+@endsection
