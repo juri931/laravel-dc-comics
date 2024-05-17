@@ -23,7 +23,7 @@
 
             <td>
                 <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-success"><i class="fa-regular fa-eye"></i></a>
-                <button class="btn btn-warning"><i class="fa-solid fa-pencil"></i></button>
+                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
             </td>
         </tr>
 

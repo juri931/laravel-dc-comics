@@ -5,6 +5,8 @@
 
     <div class="comtainer text-center">
         <a class="btn btn-warning my-2" href="{{ route('comics.index') }}">Torna alla lista</a>
+        <a class="btn btn-warning my-2" href="{{ route('comics.edit', $comic) }}">Modifica</a>
+
         <h1 class="my-5">{{ $comic->title }}</h1>
 
         <div class="row m-3">
