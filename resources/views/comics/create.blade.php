@@ -14,6 +14,10 @@
                 <input name="thumb" type="text" class="form-control" id='thumb'>
             </div>
             <div class="mb-3">
+                <label for="price" class="form-label">Prezzo</label>
+                <input name="price" type="text" class="form-control" id='price' placeholder='$'>
+            </div>
+            <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
                 <textarea name="description" type="text" class="form-control" id='description'></textarea>
             </div>
@@ -29,10 +33,10 @@
                 <label for="type" class="form-label">Tipo</label>
                 <input name="type" type="text" class="form-control" id='type'>
             </div><div class="mb-3">
-                <label for="artists" class="form-label">Disegnatori</label>
+                <label for="artists" class="form-label">Disegnatori ["nome", "nome"]</label>
                 <input name="artists" type="text" class="form-control" id='artists'>
             </div><div class="mb-3">
-                <label for="writers" class="form-label">Scrittori</label>
+                <label for="writers" class="form-label">Scrittori ["nome", "nome"]</label>
                 <input name="writers" type="text" class="form-control" id='writers'>
             </div>
             <button class="btn btn-success" type='submit'>Invia</button>

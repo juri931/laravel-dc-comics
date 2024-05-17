@@ -30,16 +30,57 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+        'title' => 'required|string|max:255',
+        'description' => 'required|string',
+        'thumb' => 'required|string|max:255',
+        'price' => 'required|numeric',
+        'series' => 'required|string|max:255',
+        'sale_date' => 'required|date',
+        'type' => 'required|string|max:255',
+        'artists' => 'required|array',
+        'writers' => 'required|array',
+    ]);
+
+        $new_comic = new Comic();
+    $new_comic->title = $validatedData['title'];
+    $new_comic->description = $validatedData['description'];
+    $new_comic->thumb = $validatedData['thumb'];
+    $new_comic->price = $validatedData['price'];
+    $new_comic->series = $validatedData['series'];
+    $new_comic->sale_date = $validatedData['sale_date'];
+    $new_comic->type = $validatedData['type'];
+    $new_comic->artists = json_encode(array_map('trim', $validatedData['artists']));
+    $new_comic->writers = json_encode(array_map('trim', $validatedData['writers']));
+
+    $new_comic->save();
+
+        $new_comic->save();
+
+        return redirect()->route('comics.show', $new_comic);
     }
 
     /**
      * Display the specified resource.
      */
     public function show(Comic $comic)
-    {
-        return view('comics.show', compact('comic'));
+{
+    $json_artists = json_decode($comic->artists, true);
+    if (json_last_error() === JSON_ERROR_NONE && is_array($json_artists)) {
+        $artists = implode(', ', $json_artists);
+    } else {
+        $artists = '-';
     }
+
+    $json_writers = json_decode($comic->writers, true);
+    if (json_last_error() === JSON_ERROR_NONE && is_array($json_writers)) {
+        $writers = implode(', ', $json_writers);
+    } else {
+        $writers = '-';
+    }
+
+    return view('comics.show', compact('comic', 'artists', 'writers'));
+}
 
     /**
      * Show the form for editing the specified resource.
