@@ -52,10 +52,14 @@ class ComicController extends Controller
             // 'sale_date.date' => 'La data deve avere un formato valido'
         // ]);
 
-        $form_data = $request->all();
-        $form_data['artists'] = '';
-        $form_data['writers'] = '';
 
+        $form_data = $request->all();
+        // Stringhe in array
+        $array_artists = explode(',', $form_data['artists']);
+        $array_writers = explode(',', $form_data['writers']);
+        // Array in JSON
+        $form_data['artists'] = json_encode($array_artists);
+        $form_data['writers'] = json_encode($array_writers);
 
         $new_comic = new Comic();
         $new_comic->fill($form_data);
@@ -69,21 +73,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
 {
-    $json_artists = json_decode($comic->artists, true);
-    if (json_last_error() === JSON_ERROR_NONE && is_array($json_artists)) {
-        $artists = implode(', ', $json_artists);
-    } else {
-        $artists = '-';
-    }
-
-    $json_writers = json_decode($comic->writers, true);
-    if (json_last_error() === JSON_ERROR_NONE && is_array($json_writers)) {
-        $writers = implode(', ', $json_writers);
-    } else {
-        $writers = '-';
-    }
-
-    return view('comics.show', compact('comic', 'artists', 'writers'));
+    return view('comics.show', compact('comic'));
 }
 
     /**
@@ -102,6 +92,13 @@ class ComicController extends Controller
     public function update(ComicRequest $request, Comic $comic)
     {
         $form_data = $request->all();
+
+        // Stringhe in array
+        $array_artists = explode(',', $form_data['artists']);
+        $array_writers = explode(',', $form_data['writers']);
+        // Array in JSON
+        $form_data['artists'] = json_encode($array_artists);
+        $form_data['writers'] = json_encode($array_writers);
 
         $comic->update($form_data);
 
