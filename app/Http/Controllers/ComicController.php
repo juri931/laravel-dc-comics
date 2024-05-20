@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Http\Requests\ComicRequest;
 
 class ComicController extends Controller
 {
@@ -28,24 +29,24 @@ class ComicController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ComicRequest $request)
     {
 
         $request->validate([
-            'title' => 'required|min:3|max:100',
-            'description' => 'min:10|max:5000',
-            'thumb' => 'max:5000',
-            'price' => 'numeric',
-            'series' => 'min:3|max:100',
-            'sale_date' => 'date',
-            'type' => 'min:3|max:100',
+            // 'title' => 'required|min:3|max:100',
+            // 'description' => 'min:10|max:5000',
+            // 'thumb' => 'max:5000',
+            // 'price' => 'numeric',
+            // 'series' => 'min:3|max:100',
+            // 'sale_date' => 'date',
+            // 'type' => 'min:3|max:100',
         ],[
-            'title.required' => 'Il titolo è obbligatorio',
-            'title.min' => 'Il titolo deve avere almeno 3 caratteri',
-            'title.max' => 'Il titolo deve avere al massimo 100 caratteri',
-            'description.min' => 'La descrizione deve avere almeno 10 caratteri',
-            'price.numeric' => 'Il prezzo deve essere un valore numerico',
-            'sale_date.date' => 'La data deve avere un formato valido'
+            // 'title.required' => 'Il titolo è obbligatorio',
+            // 'title.min' => 'Il titolo deve avere almeno 3 caratteri',
+            // 'title.max' => 'Il titolo deve avere al massimo 100 caratteri',
+            // 'description.min' => 'La descrizione deve avere almeno 10 caratteri',
+            // 'price.numeric' => 'Il prezzo deve essere un valore numerico',
+            // 'sale_date.date' => 'La data deve avere un formato valido'
         ]);
 
         $form_data = $request->all();
