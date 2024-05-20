@@ -118,7 +118,7 @@
                     @enderror
             </div>
             <div class="mb-3">
-                <label for="artists" class="form-label">Disegnatori ["nome", "nome"]</label>
+                <label for="artists" class="form-label">Disegnatori</label>
                 <input
                     name="artists"
                     type="text"
@@ -132,7 +132,7 @@
                     @enderror
             </div>
             <div class="mb-3">
-                <label for="writers" class="form-label">Scrittori ["nome", "nome"]</label>
+                <label for="writers" class="form-label">Scrittori</label>
                 <input
                     name="writers"
                     type="text"
