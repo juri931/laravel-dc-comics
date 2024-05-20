@@ -24,6 +24,11 @@
                     class="form-control @error('title') is-invalid @enderror"
                     id='title'
                     value='{{ old('title') }}'>
+                    @error('titolo')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
             </div>
             <div class="mb-3">
                 <label for="thumb" class="form-label">URL immagine</label>
@@ -33,6 +38,11 @@
                     class="form-control @error('thumb') is-invalid @enderror"
                     id='thumb'
                     value='{{ old('thumb') }}'>
+                    @error('thumb')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
@@ -43,6 +53,11 @@
                     id='price'
                     placeholder='$'
                     value='{{ old('price') }}'>
+                    @error('price')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>
@@ -53,6 +68,11 @@
                     id='description'
                     value='{{ old('description') }}'>
                 </textarea>
+                    @error('description')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
             </div>
             <div class="mb-3">
                 <label for="series" class="form-label">Serie</label>
@@ -62,6 +82,11 @@
                     class="form-control @error('series') is-invalid @enderror"
                     id='series'
                     value='{{ old('series') }}'>
+                    @error('series')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
             </div>
             <div class="mb-3">
                 <label for="sale_date" class="form-label">Data Vendita</label>
@@ -71,6 +96,11 @@
                     class="form-control @error('sale_date') is-invalid @enderror"
                     id='sale_date'
                     value='{{ old('sale_date') }}'>
+                    @error('sale_date')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
             </div>
             <div class="mb-3">
                 <label for="type" class="form-label">Tipo</label>
@@ -80,6 +110,11 @@
                     class="form-control @error('type') is-invalid @enderror"
                     id='type'
                     value='{{ old('type') }}'>
+                    @error('type')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
             </div>
             <div class="mb-3">
                 <label for="artists" class="form-label">Disegnatori ["nome", "nome"]</label>
@@ -89,7 +124,13 @@
                     class="form-control @error('artists') is-invalid @enderror"
                     id='artists'
                     value='{{ old('artists') }}'>
-            </div><div class="mb-3">
+                    @error('artists')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
+            </div>
+            <div class="mb-3">
                 <label for="writers" class="form-label">Scrittori ["nome", "nome"]</label>
                 <input
                     name="writers"
@@ -97,6 +138,11 @@
                     class="form-control @error('writers') is-invalid @enderror"
                     id='writers'
                     value='{{ old('writers') }}'>
+                    @error('writers')
+                        <small class="text-danger">
+                            {{ $message }}
+                        </small>
+                    @enderror
             </div>
             <button class="btn btn-success" type='submit'>Invia</button>
             <button class="btn btn-warning" type='reset'>Reset</button>
