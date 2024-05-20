@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="my-container w-75 mx-auto">
-        <h1>Aggingi un comic</h1>
+        <h1>Modifica comic</h1>
         <form action="{{ route('comics.update', $comic) }}" method="POST">
-            @csrf
-            @method('PUT')
+             @csrf {{-- token di sicurezza di convalida del form --}}
+             @method('PUT') {{-- forzatura dell'invio in PUT per il metodo POST di HTML --}}
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
                 <input name="title" type="text" class="form-control" id='title' value='{{ $comic->title }}'>

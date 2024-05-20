@@ -1,5 +1,7 @@
+{{-- Metodo DELETE per cancellare l'elemento --}}
 <form action="{{ route('comics.destroy', $comic) }}"
       method="POST"
+      {{-- Messaggio di Confirm  --}}
       onsubmit="return confirm('Sicuro di voler eliminare {{ $comic->title }}?')">
     @csrf
     @method('DELETE')

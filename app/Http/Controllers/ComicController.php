@@ -91,6 +91,7 @@ class ComicController extends Controller
     {
         $comic->delete();
 
+        // Reindirizzamento a index + Creazione variabile di sessione che mostrerà il messaggio di conferma eliminazione
         return redirect()->route('comics.index')->with('deleted', 'Il comic ' . $comic->title . ' è stato eliminato');
     }
 }
