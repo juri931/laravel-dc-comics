@@ -23,7 +23,10 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        $method = 'POST';
+        $route = route('comics.store');
+        $comic = null;
+        return view('comics.create-edit', compact('method', 'route', 'comic'));
     }
 
     /**
@@ -88,7 +91,9 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        return view('comics.edit', compact('comic'));
+        $method = 'PUT';
+        $route = route('comics.update', $comic);
+        return view('comics.create-edit', compact('method', 'route', 'comic'));
     }
 
     /**

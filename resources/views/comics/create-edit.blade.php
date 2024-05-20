@@ -14,8 +14,9 @@
             </div>
         @endif
 
-        <form action="{{ route('comics.store') }}" method="POST">
+        <form action="{{ $route }}" method="POST">
             @csrf
+            @method($method)
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
                 <input
@@ -23,7 +24,7 @@
                     type="text"
                     class="form-control @error('title') is-invalid @enderror"
                     id='title'
-                    value='{{ old('title') }}'>
+                    value='{{ old('title', $comic?->title) }}'>
                     @error('titolo')
                         <small class="text-danger">
                             {{ $message }}
@@ -37,7 +38,7 @@
                     type="text"
                     class="form-control @error('thumb') is-invalid @enderror"
                     id='thumb'
-                    value='{{ old('thumb') }}'>
+                    value='{{ old('thumb', $comic?->thumb) }}'>
                     @error('thumb')
                         <small class="text-danger">
                             {{ $message }}
@@ -52,7 +53,7 @@
                     class="form-control @error('price') is-invalid @enderror"
                     id='price'
                     placeholder='$'
-                    value='{{ old('price') }}'>
+                    value='{{ old('price', $comic?->price) }}'>
                     @error('price')
                         <small class="text-danger">
                             {{ $message }}
@@ -66,7 +67,7 @@
                     type="text"
                     class="form-control @error('description') is-invalid @enderror"
                     id='description'
-                    value='{{ old('description') }}'>
+                    value='{{ old('description', $comic?->description) }}'>
                 </textarea>
                     @error('description')
                         <small class="text-danger">
@@ -81,7 +82,7 @@
                     type="text"
                     class="form-control @error('series') is-invalid @enderror"
                     id='series'
-                    value='{{ old('series') }}'>
+                    value='{{ old('series', $comic?->series) }}'>
                     @error('series')
                         <small class="text-danger">
                             {{ $message }}
@@ -95,7 +96,7 @@
                     type="date"
                     class="form-control @error('sale_date') is-invalid @enderror"
                     id='sale_date'
-                    value='{{ old('sale_date') }}'>
+                    value='{{ old('sale_date', $comic?->sale_date) }}'>
                     @error('sale_date')
                         <small class="text-danger">
                             {{ $message }}
@@ -109,7 +110,7 @@
                     type="text"
                     class="form-control @error('type') is-invalid @enderror"
                     id='type'
-                    value='{{ old('type') }}'>
+                    value='{{ old('type', $comic?->type) }}'>
                     @error('type')
                         <small class="text-danger">
                             {{ $message }}
@@ -123,7 +124,7 @@
                     type="text"
                     class="form-control @error('artists') is-invalid @enderror"
                     id='artists'
-                    value='{{ old('artists') }}'>
+                    value='{{ old('artists', $comic?->artists) }}'>
                     @error('artists')
                         <small class="text-danger">
                             {{ $message }}
@@ -137,7 +138,7 @@
                     type="text"
                     class="form-control @error('writers') is-invalid @enderror"
                     id='writers'
-                    value='{{ old('writers') }}'>
+                    value='{{ old('writers', $comic?->writers) }}'>
                     @error('writers')
                         <small class="text-danger">
                             {{ $message }}
