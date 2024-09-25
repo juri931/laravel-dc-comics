@@ -10,6 +10,10 @@ body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    tr {
+        background-color: white;
+        border-bottom: 1px solid grey;
+    }
 }
 
 header {
@@ -48,7 +52,6 @@ header {
 
 main {
     .container {
-        // background-image: url("https://wallpapercave.com/wp/wp2588482.jpg");
         padding: 0;
         background-position: center;
         background-size: cover;
